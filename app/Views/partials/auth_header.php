@@ -13,5 +13,7 @@
     <link rel="stylesheet" href="/xhtml/assets/css/switcher.css">
     <link class="main-plugins" rel="stylesheet" href="/xhtml/assets/css/plugins.css">
     <link class="main-css" rel="stylesheet" href="/xhtml/assets/css/style.css">
+    <link rel="stylesheet" href="/theme/css/theme.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
 </head>
 <body class="h-100">
