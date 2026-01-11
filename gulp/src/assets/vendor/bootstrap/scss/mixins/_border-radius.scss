@@ -1,0 +1,78 @@
+// stylelint-disable property-disallowed-list
+// Single side border-radius
+
+// Helper function to replace negative values with 0
+@function valid-radius(var(--bs-border-radius)) {
+  $return: ();
+  @each $value in var(--bs-border-radius) {
+    @if type-of($value) == number {
+      $return: append($return, max($value, 0));
+    } @else {
+      $return: append($return, $value);
+    }
+  }
+  @return $return;
+}
+
+// scss-docs-start border-radius-mixins
+@mixin border-radius(var(--bs-border-radius): $border-radius, $fallback-border-radius: false) {
+  @if $enable-rounded {
+    border-radius: valid-radius(var(--bs-border-radius));
+  }
+  @else if $fallback-border-radius != false {
+    border-radius: $fallback-border-radius;
+  }
+}
+
+@mixin border-top-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius(var(--bs-border-radius));
+    border-top-right-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-end-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius(var(--bs-border-radius));
+    border-bottom-right-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-bottom-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: valid-radius(var(--bs-border-radius));
+    border-bottom-left-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-start-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius(var(--bs-border-radius));
+    border-bottom-left-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-top-start-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-top-end-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-bottom-end-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+
+@mixin border-bottom-start-radius(var(--bs-border-radius): $border-radius) {
+  @if $enable-rounded {
+    border-bottom-left-radius: valid-radius(var(--bs-border-radius));
+  }
+}
+// scss-docs-end border-radius-mixins

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<base href="../">
+
+	@@include("../elements/layout/meta.html", {
+		"fileName": "page-error-503.html",
+	})
+
+	@@include("../elements/layout/basic-css.html")
+	
+</head>
+<body>      
+	
+	<main class="authincation fix-wrapper" style="background-image: url(assets/images/student-bg.webp); background-repeat:no-repeat; background-size:cover;">
+        <div class="container">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="form-input-content error-page">
+						<h1 class="error-text text-primary">503</h1>
+						<h4> Service Unavailable</h4>
+						<p>Sorry, we are under maintenance!</p>
+                        <a class="btn btn-primary fs-16" href="index.html">Back to Home</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+					<img  class="w-100" src="assets/images/under-m.avif" alt="">
+				</div>
+            </div>
+        </div>
+    </main>
+
+	<!-- Start - Page Scripts -->
+	@@include("../elements/layout/script.html")
+	
+	<!-- Script For Custom JS -->
+	<script src="assets/js/deznav-init.js"></script>
+    <script src="assets/js/custom.js"></script>
+	
+	
+
+</body>
+</html>
