@@ -1,6 +1,9 @@
 INSERT INTO users (name, email, password_hash, role, is_active, created_at)
 VALUES ('Administrador', 'admin@example.com', '$2y$12$Za/T8cJM9BKKhEDGq5DI5e7nOb1HwNC6XPJkl2tRG/Yko2IZMwVqm', 'ADMIN', 1, NOW());
 
+INSERT INTO users (name, email, password_hash, role, is_active, created_at)
+VALUES ('Admin', 'admin@vibrutdm.local', '$2y$12$oqB/HFmv0yS3jMaHIBmBkuSmBjWddREzekWXb/FCjwxHngIggi44a', 'ADMIN', 1, NOW());
+
 INSERT INTO tournaments (name, venue, date_start, status, created_at)
 VALUES ('Open Tenis de Mesa', 'Centro Deportivo', CURDATE(), 'borrador', NOW());
 
