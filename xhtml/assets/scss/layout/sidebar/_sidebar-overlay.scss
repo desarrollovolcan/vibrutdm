@@ -1,0 +1,117 @@
+[data-sidebar-style="overlay"] {
+	&[data-layout="vertical"]{
+
+		--dz-side-sub_nav-padding : .5rem .5rem .5rem 3.5rem;
+		--dz-side-nav-padding : .75rem 1.5rem;
+
+	}
+    .deznav {
+        left: -100%;
+        @include transitionMedium;
+		box-shadow: 10px 10px 0.625rem rgba(0, 0, 0, 0.05);
+		.metismenu{
+			& > li {
+				padding: 0 0.5rem;
+				& > a {
+					color: #7f7184;
+					border-radius: var(--bs-border-radius);
+					-webkit-transition: all 0.5s;
+					-ms-transition: all 0.5s;
+					transition: all 0.5s;
+					i{
+						height: auto;
+						width: auto;
+						margin-right: 0.6rem;
+						line-height: normal;
+					}
+					
+				}
+				&>a.has-arrow::after {
+					border-top-color: var(--bs-dark);
+					border-left-color: var(--bs-dark);
+				}
+				&:hover > a{
+					color:var(--bs-primary);
+					
+				}
+				&.mm-active{
+					&>a {
+						color:var(--bs-white);
+						background-color: var(--bs-primary);
+						i{
+							height: auto;
+							width: auto;
+							line-height: normal;
+							margin-right: 0.6rem;
+						}
+						
+						&:after {
+							border-top-color: var(--bs-white);
+							border-left-color: var(--bs-white);
+						}
+					}
+
+				}
+				
+			}
+			
+		}
+		
+    }
+    .content-body {
+        margin-left: 0;
+    }
+    .nav-header {
+        position: absolute;
+        .hamburger.is-active {
+            left: 0;
+            .line {
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+    .menu-toggle {
+        .nav-header {
+            position: absolute;
+            left: auto;
+        }
+        .deznav {
+            left: 0;
+        }
+    }
+    .footer {
+        padding-left: 0;
+    }
+}
+
+[data-sidebar-style="overlay"][data-header-position="fixed"] {
+    .nav-header {
+        position: fixed;
+    }
+}
+
+
+[data-container="wide-boxed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"],
+[data-container="boxed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"]{ 
+	.deznav {
+        position: fixed;
+		left: auto;
+		width:0;
+		overflow: hidden;
+		transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+		& > div{
+			width: var(--dz-sidebar-width);
+			min-width: var(--dz-sidebar-width);
+			right: var(--dz-sidebar-width);
+			transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+		}
+    }
+	.menu-toggle{
+		.deznav {
+			width:var(--dz-sidebar-width);
+			& > div{
+				right: 0;
+			}
+		}
+	}	
+}

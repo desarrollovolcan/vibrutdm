@@ -1,0 +1,392 @@
+.header-right {
+    height: 100%;
+    .nav-item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .nav-link {
+            color: var(--bs-primary);
+            font-size: 18px;
+        }
+    }
+	.right-sidebar{
+		margin-right:-30px;
+		a{
+			height: 80px;
+			width: 80px;
+			text-align: center;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			border-left: 1px solid var(--bs-bg-subtle);
+		}
+	}
+    
+    .notification_dropdown {
+        @include respond('phone-land') {
+            position: static;
+        }
+        .nav-link {
+            position: relative;
+            color: var(--bs-primary);
+			background: var(--bs-secondary-bg);
+			border-radius: 100%;
+			padding: 12px;
+			line-height: 1;
+			margin-right:18px;
+			@at-root [data-theme-version="dark"] & {
+				color: #fff;
+			}
+			@include respond ('phone'){
+				margin-right:13px;
+			}
+            svg{
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+				path{
+					fill:var(--bs-dark);
+				}
+            }
+			@include respond('laptop') {
+				padding: 10px;
+			}
+			
+			&.secondary{
+				background:var(--bs-secondary-bg-subtle);
+				color: var(--bs-secondary);
+				[fill] {
+					fill: var(--bs-secondary);
+				}
+				
+			}
+			&.primary{
+				background:	rgba(var(--bs-primary-rgb), 0.1);
+				color: var(--bs-primary);
+				[fill] {
+					fill: var(--bs-primary);
+				}
+			}
+			&.warning{
+				background: var(--bs-warning-bg-subtle);
+				color: var(--bs-warning);
+				[fill] {
+					fill: var(--bs-warning);
+				}
+			}
+			&.success{
+				background:var(--bs-success-bg-subtle);
+				color: var(--bs-success);
+				[fill] {
+					fill: var(--bs-success);
+				}
+			}
+            i {
+                font-size: 24px;
+				@include respond('laptop') {
+					font-size: 18px;
+				}
+				
+            }
+			svg{
+				@include respond('laptop') {
+					width:18px;
+					height:18px;
+				}
+			}
+            .badge {
+                position: absolute;
+                font-size: 10px;
+                border-radius: 0;
+                right: -5px;
+				box-shadow:0px 0px 10px 3px rgba(var(--bs-primary-rgb), 0.2);
+                top: -5px;
+                font-weight: normal;
+                height: 20px;
+                width: 20px;
+                font-weight: 500;
+                line-height: 20px;
+                text-align: center;
+                padding: 0px;
+				@include respond('laptop') {
+					right: -2px;
+					top: -2px;
+					font-size: 12px;
+					height: 18px;
+					width: 18px;
+					line-height: 18px;
+				}
+            }
+        }
+        .dropdown-item {
+            &:focus,
+            &:active {
+                a {
+                    color: var(--bs-white);
+                }
+            }
+            a {
+                color: $dark;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .dropdown-menu {
+        border-width:0;
+        box-shadow: 0 0 37px rgba(8,21,66,0.05);
+        @at-root [data-theme-version="dark"] & {
+            box-shadow: none;
+        }
+    }
+    .header-profile {
+        &>a.nav-link {
+			padding: 0 0 0 0;
+			display: flex;
+			align-items: center;
+			border-radius: var(--bs-border-radius) 28px 28px var(--bs-border-radius);
+			@include respond('phone') {
+				background: transparent;
+				padding: 0 ;
+			}	
+            i {
+                font-weight: 700;
+            }
+			.header-info{
+				text-align: right;
+				padding-right:15px;
+				@include respond('tab-land') {
+					padding-left:15px;
+				}
+				@include respond ('phone-land'){
+					padding-left:0px;
+					padding-right:12px;
+				}
+				@include respond('phone') {
+					display:none;
+				}
+				span{
+					font-size:16px;
+					display: block;
+					font-weight: 400;
+					@include respond ('phone-land'){
+						font-size: .9375rem;
+					}
+				}
+				strong{
+					font-weight: 600;
+				}
+				small{
+					display:block;
+					font-size: 13px;
+					color:var(--bs-muted);
+					font-weight:400;
+					line-height: 1.2;
+				}
+			}
+        }
+        .dropdown-menu {
+            padding: 15px 0;
+            min-width: 12.5rem;
+            a {
+                &:hover,
+                &:focus,
+                &.active {
+                    color: var(--bs-primary);
+                }
+            }
+        }
+        img {
+            width: 57px;
+            height: 57px;
+            border-radius: 100%;
+				
+			@include respond('laptop') {
+				 width: 39px;
+				height: 39px;
+			}
+        }
+        .dropdown-toggle {
+            i {
+                font-size: 1.25rem;
+            }
+            span {
+                @include respond('phone') {
+                    display: none;
+                }
+            }
+        }
+        .profile_title {
+            background: var(--bs-primary);
+            color: var(--bs-white);
+            padding: 10px 20px;
+            h5 {
+                color: var(--bs-white);
+                margin-bottom: 3px;
+            }
+        }
+        
+        .dropdown-item {
+            padding: 8px 24px;
+        }
+    }
+	.weather-detail{
+		background:#F0F4F5;
+		color:#424242;
+		height:45px;
+		font-size:14px;
+		font-weight:500;
+		line-height:45px;
+		padding-right:15px;
+		border-radius:4rem;
+		margin-right:18px;
+		span{
+			height:45px;
+			background:var(--bs-primary);
+			line-height:45px;
+			font-size:20px;
+			padding: 0px 15px;
+			margin-right: 10px;
+			border-radius:4rem;
+			color:var(--bs-white);
+			i{
+				padding-right: 12px;
+				font-size: 25px;
+			}
+		}
+		@include respond ('laptop'){
+			height:40px;
+			line-height:40px;
+			span{
+				height:40px;
+				line-height:40px;
+				font-size:20px;
+			}
+		}
+		@include custommq($max:1250px){
+			display:none!important;
+		}
+	}
+	.header-profile{
+		.nav-link{
+			margin-left:1rem;
+			@include respond ('phone'){
+				margin-left:0.2rem;
+			}
+		}
+
+	}
+}
+.dz-fullscreen{
+	#icon-minimize{
+		display:none;
+	}
+	&.active{
+		#icon-full{
+			display:none;
+		}
+		#icon-minimize{
+			display:inline-block;
+		}
+	}
+}
+.dz-theme-mode{
+	#icon-light{
+		display:none;
+	}
+	&.active{
+		#icon-light{
+			display:inline-block;
+		}
+		#icon-dark{
+			display:none;
+		}
+	}
+}
+.notification_dropdown {
+    .dropdown-menu-end {
+        min-width: 310px;
+        padding: 0rem 0 1rem;
+        top: 100%;
+		
+        .notification_title {
+            background: var(--bs-primary);
+            color: var(--bs-white);
+            padding: 10px 20px;
+            h5 {
+                color: var(--bs-white);
+                margin-bottom: 3px;
+            }
+        }
+        .media {
+			width: 45px !important;
+			height: 45px !important;
+			font-size: 18px !important;
+			
+           
+            @at-root [data-theme-version="dark"] & {
+                border-color: var(--bs-border-color-dark);
+            }
+            &>span {
+                width: 35px;
+                height: 35px;
+                border-radius: 50px;
+                display: inline-block;
+                padding: 7px 9px;
+                margin-right: 10px;
+				@at-root [direction="rtl"]#{&} {
+					 margin-right: 0;
+					 margin-left: 10px
+				}
+                &.success {
+                    background: var(--bs-success-bg-subtle);
+                    color: var(--bs-success);
+					[fill] {
+						fill: var(--bs-success);
+					}
+                }
+                &.primary {
+                    background: var(--rgba-primary-1);
+                    color: var(--bs-primary);
+					svg [fill] {
+						fill: var(--bs-primary);
+					}
+                }
+                &.danger {
+                    background: var(bs-danger-bg-subtle);
+                    color: var(bs-danger);
+					[fill] {
+						fill: var(bs-danger);
+					}
+                }
+				[fill] {
+					fill: var(--bs-primary);
+				}
+            }
+            p {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: 200px;
+                margin-bottom: 0;
+                margin-top: 5px;
+				@include respond('phone') {
+				    max-width: 100px;
+				}
+            }
+        }
+        .all-notification {
+            display: block;
+            padding: 15px 30px 0;
+            text-align: center;
+			border-top: 1px solid var(--bs-border);
+			color:var(--bs-primary);
+				
+            i {
+                margin-left: 10px;
+				font-weight:900;
+            }
+        }
+    }
+}
