@@ -145,5 +145,5 @@ $user = current_user();
             </ul>
         </div>
     </div>
-    <main class="content-body default-height">
+    <div class="content-body default-height">
         <div class="container-fluid">

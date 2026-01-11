@@ -1,5 +1,5 @@
         </div>
-    </main>
+    </div>
     <div class="footer">
         <div class="copyright">
             <p>Tenis de Mesa · Sistema de Torneos</p>
