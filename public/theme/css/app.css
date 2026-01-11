@@ -1,0 +1,44 @@
+#main-wrapper,
+#main-wrapper.show {
+    opacity: 1;
+}
+
+#preloader {
+    display: none;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bracket-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.bracket-round {
+    min-width: 200px;
+}
+
+.bracket-match {
+    background: var(--bs-light);
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+}
+
+.bracket-match .team {
+    padding: 0.25rem 0;
+}
+
+.bracket-match .winner {
+    font-weight: 600;
+    color: var(--bs-success);
+}

@@ -1,25 +1,35 @@
 <?php require __DIR__ . '/../partials/header.php'; ?>
 <div class="card">
-    <h3>Nuevo torneo</h3>
-    <form method="post" action="/tournaments/store" class="form-grid">
-        <?php echo csrf_field(); ?>
-        <label>Nombre
-            <input type="text" name="name" required>
-        </label>
-        <label>Sede
-            <input type="text" name="venue" required>
-        </label>
-        <label>Fecha inicio
-            <input type="date" name="date_start" required>
-        </label>
-        <label>Estado
-            <select name="status">
-                <option value="borrador">Borrador</option>
-                <option value="en_curso">En curso</option>
-                <option value="finalizado">Finalizado</option>
-            </select>
-        </label>
-        <button type="submit" class="btn primary">Guardar</button>
-    </form>
+    <div class="card-header">
+        <h5 class="mb-0">Nuevo torneo</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" action="/tournaments/store" class="row g-3">
+            <?php echo csrf_field(); ?>
+            <div class="col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Sede</label>
+                <input type="text" name="venue" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Fecha inicio</label>
+                <input type="date" name="date_start" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Estado</label>
+                <select name="status" class="form-select">
+                    <option value="borrador">Borrador</option>
+                    <option value="en_curso">En curso</option>
+                    <option value="finalizado">Finalizado</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
 </div>
 <?php require __DIR__ . '/../partials/footer.php'; ?>
