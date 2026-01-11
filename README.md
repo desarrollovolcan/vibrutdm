@@ -35,7 +35,7 @@ APP_KEY=base64:tu_clave
 ```
 
 5. Inicia sesión con:
-- **admin@example.com** / **Cambiar123!** (cambiar después de ingresar).
+- **admin@example.com** / **admin123** (cambiar después de ingresar).
 
 ## Estructura
 ```
@@ -63,4 +63,3 @@ APP_KEY=base64:tu_clave
 
 ## Reportes
 Usa la vista de llave o grupos y la opción de impresión del navegador.
-

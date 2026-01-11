@@ -1,5 +1,5 @@
 INSERT INTO users (name, email, password_hash, role, is_active, created_at)
-VALUES ('Administrador', 'admin@example.com', '$2y$12$Za/T8cJM9BKKhEDGq5DI5e7nOb1HwNC6XPJkl2tRG/Yko2IZMwVqm', 'ADMIN', 1, NOW());
+VALUES ('Administrador', 'admin@example.com', '$2y$12$wVUQFyrR5xutTs3UjvqPGewf8MASscATM.Y4T4DHJwiiW3oTS8o0W', 'ADMIN', 1, NOW());
 
 INSERT INTO users (name, email, password_hash, role, is_active, created_at)
 VALUES ('Admin', 'admin@vibrutdm.local', '$2y$12$oqB/HFmv0yS3jMaHIBmBkuSmBjWddREzekWXb/FCjwxHngIggi44a', 'ADMIN', 1, NOW());
