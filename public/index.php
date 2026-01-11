@@ -52,7 +52,13 @@ $router->get('/login', [new AuthController(), 'showLogin']);
 $router->post('/login', [new AuthController(), 'login']);
 $router->get('/logout', [new AuthController(), 'logout']);
 
-$router->get('/', [new DashboardController(), 'index'], ['ADMIN', 'OPERADOR', 'LECTURA']);
+$router->get('/', function (): void {
+    if (Session::user()) {
+        (new DashboardController())->index();
+        return;
+    }
+    (new AuthController())->showLogin();
+});
 
 $router->get('/users', [new UsersController(), 'index'], ['ADMIN']);
 $router->get('/users/create', [new UsersController(), 'create'], ['ADMIN']);
@@ -107,8 +113,8 @@ $router->get('/brackets/show', [new BracketsController(), 'show'], ['ADMIN', 'OP
 $router->post('/brackets/generate', [new BracketsController(), 'generate'], ['ADMIN', 'OPERADOR']);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
-if (!Session::user() && !in_array($path, ['/login'], true)) {
-    redirect('/login');
+if (!Session::user() && !in_array($path, ['/', '/login'], true)) {
+    redirect('/');
 }
 
 $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
