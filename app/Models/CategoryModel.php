@@ -12,6 +12,25 @@ class CategoryModel extends Model
         return $stmt->fetchAll();
     }
 
+    public function first(): ?array
+    {
+        $stmt = $this->db->query('SELECT * FROM categories ORDER BY name LIMIT 1');
+        $category = $stmt->fetch();
+
+        return $category ?: null;
+    }
+
+    public function firstByTournament(int $tournamentId): ?array
+    {
+        $stmt = $this->db->prepare(
+            'SELECT * FROM categories WHERE tournament_id = :tournament_id ORDER BY name LIMIT 1'
+        );
+        $stmt->execute(['tournament_id' => $tournamentId]);
+        $category = $stmt->fetch();
+
+        return $category ?: null;
+    }
+
     public function find(int $id): ?array
     {
         $stmt = $this->db->prepare('SELECT * FROM categories WHERE id = :id');

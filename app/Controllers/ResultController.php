@@ -17,6 +17,14 @@ class ResultController extends Controller
         $matchModel = new MatchModel();
         $matchSetModel = new MatchSetModel();
 
+        if ($matchId === 0) {
+            $match = $matchModel->first();
+            if ($match) {
+                $this->redirect('/results/edit?match_id=' . $match['id']);
+                return;
+            }
+        }
+
         $this->view('results/edit', [
             'match' => $matchModel->find($matchId),
             'sets' => $matchSetModel->listByMatch($matchId),
