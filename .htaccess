@@ -1,9 +1,7 @@
-DirectoryIndex index.php
-
 RewriteEngine On
 
-RewriteRule ^index\.php$ - [L]
-RewriteRule ^public/ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
 RewriteRule ^ index.php [L]
