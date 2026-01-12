@@ -19,5 +19,11 @@ spl_autoload_register(function (string $class): void {
     }
 });
 
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
+if (!isset($_SESSION['user']) && !in_array($path, ['/', '/login'], true)) {
+    header('Location: /login');
+    exit;
+}
+
 $router = require __DIR__ . '/../routes/web.php';
 $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
