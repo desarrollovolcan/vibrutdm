@@ -62,15 +62,15 @@ $title = $title ?? 'VMC Ping Pong';
     <div class="deznav">
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
-                <li><a href="/dashboard" class="ai-icon"><i class="flaticon-381-home-2"></i><span class="nav-text">Dashboard</span></a></li>
-                <li><a href="/tournaments" class="ai-icon"><i class="flaticon-381-rocket"></i><span class="nav-text">Torneos</span></a></li>
-                <li><a href="/categories" class="ai-icon"><i class="flaticon-381-list"></i><span class="nav-text">Categorías</span></a></li>
-                <li><a href="/players" class="ai-icon"><i class="flaticon-381-user"></i><span class="nav-text">Jugadores</span></a></li>
-                <li><a href="/registrations" class="ai-icon"><i class="flaticon-381-add-1"></i><span class="nav-text">Inscripciones</span></a></li>
-                <li><a href="/groups" class="ai-icon"><i class="flaticon-381-layer-1"></i><span class="nav-text">Grupos</span></a></li>
-                <li><a href="/matches" class="ai-icon"><i class="flaticon-381-stopwatch"></i><span class="nav-text">Partidos</span></a></li>
+                <li><a href="/dashboard/index" class="ai-icon"><i class="flaticon-381-home-2"></i><span class="nav-text">Dashboard</span></a></li>
+                <li><a href="/tournaments/index" class="ai-icon"><i class="flaticon-381-rocket"></i><span class="nav-text">Torneos</span></a></li>
+                <li><a href="/categories/index" class="ai-icon"><i class="flaticon-381-list"></i><span class="nav-text">Categorías</span></a></li>
+                <li><a href="/players/index" class="ai-icon"><i class="flaticon-381-user"></i><span class="nav-text">Jugadores</span></a></li>
+                <li><a href="/registrations/index" class="ai-icon"><i class="flaticon-381-add-1"></i><span class="nav-text">Inscripciones</span></a></li>
+                <li><a href="/groups/index" class="ai-icon"><i class="flaticon-381-layer-1"></i><span class="nav-text">Grupos</span></a></li>
+                <li><a href="/matches/show" class="ai-icon"><i class="flaticon-381-stopwatch"></i><span class="nav-text">Partidos</span></a></li>
                 <li><a href="/results/edit" class="ai-icon"><i class="flaticon-381-edit"></i><span class="nav-text">Resultados</span></a></li>
-                <li><a href="/brackets" class="ai-icon"><i class="flaticon-381-network"></i><span class="nav-text">Llaves</span></a></li>
+                <li><a href="/brackets/show" class="ai-icon"><i class="flaticon-381-network"></i><span class="nav-text">Llaves</span></a></li>
                 <li><a href="/logout" class="ai-icon"><i class="flaticon-381-exit"></i><span class="nav-text">Salir</span></a></li>
             </ul>
         </div>
