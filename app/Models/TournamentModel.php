@@ -9,6 +9,14 @@ class TournamentModel extends Model
         return $this->db->query('SELECT * FROM tournaments ORDER BY start_date DESC')->fetchAll();
     }
 
+    public function first(): ?array
+    {
+        $stmt = $this->db->query('SELECT * FROM tournaments ORDER BY start_date DESC LIMIT 1');
+        $tournament = $stmt->fetch();
+
+        return $tournament ?: null;
+    }
+
     public function find(int $id): ?array
     {
         $stmt = $this->db->prepare('SELECT * FROM tournaments WHERE id = :id');

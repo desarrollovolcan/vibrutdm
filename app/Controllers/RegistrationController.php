@@ -16,6 +16,14 @@ class RegistrationController extends Controller
         $playerModel = new PlayerModel();
         $categoryModel = new CategoryModel();
 
+        if ($categoryId === 0) {
+            $category = $categoryModel->first();
+            if ($category) {
+                $this->redirect('/registrations?category_id=' . $category['id']);
+                return;
+            }
+        }
+
         $this->view('registrations/index', [
             'category' => $categoryModel->find($categoryId),
             'registrations' => $categoryId ? $registrationModel->listByCategory($categoryId) : [],

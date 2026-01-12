@@ -67,6 +67,25 @@ class MatchModel extends Model
         return $stmt->fetchAll();
     }
 
+    public function first(): ?array
+    {
+        $stmt = $this->db->query('SELECT * FROM matches ORDER BY id LIMIT 1');
+        $match = $stmt->fetch();
+
+        return $match ?: null;
+    }
+
+    public function firstByGroup(int $groupId): ?array
+    {
+        $stmt = $this->db->prepare(
+            'SELECT * FROM matches WHERE group_id = :group_id ORDER BY id LIMIT 1'
+        );
+        $stmt->execute(['group_id' => $groupId]);
+        $match = $stmt->fetch();
+
+        return $match ?: null;
+    }
+
     public function listByBracket(int $bracketId): array
     {
         $stmt = $this->db->prepare(
