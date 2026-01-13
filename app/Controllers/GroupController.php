@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\CategoryModel;
 use App\Models\GroupModel;
 use App\Models\GroupPlayerModel;
 use App\Models\MatchModel;
@@ -16,6 +17,15 @@ class GroupController extends Controller
     {
         $categoryId = (int) ($_GET['category_id'] ?? 0);
         $groupModel = new GroupModel();
+
+        if ($categoryId === 0) {
+            $categoryModel = new CategoryModel();
+            $category = $categoryModel->first();
+            if ($category) {
+                $this->redirect('/groups?category_id=' . $category['id']);
+                return;
+            }
+        }
 
         $this->view('groups/index', [
             'groups' => $categoryId ? $groupModel->listByCategory($categoryId) : [],

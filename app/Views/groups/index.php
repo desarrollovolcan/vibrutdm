@@ -8,7 +8,7 @@ ob_start();
                 <h4 class="card-title">Generar grupos</h4>
             </div>
             <div class="card-body">
-                <form method="post" action="/groups/generate">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/groups/generate">
                     <input type="hidden" name="category_id" value="<?= htmlspecialchars((string) $categoryId) ?>">
                     <div class="mb-3">
                         <label class="form-label">Modo de reparto</label>
@@ -44,7 +44,7 @@ ob_start();
                             <tr>
                                 <td>Grupo <?= htmlspecialchars((string) $group['group_number']) ?></td>
                                 <td>
-                                    <a href="/groups/show?group_id=<?= htmlspecialchars((string) $group['id']) ?>" class="btn btn-sm btn-info">Ver</a>
+                                    <a href="<?= htmlspecialchars($baseUrl) ?>/groups/show?group_id=<?= htmlspecialchars((string) $group['id']) ?>" class="btn btn-sm btn-info">Ver</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
