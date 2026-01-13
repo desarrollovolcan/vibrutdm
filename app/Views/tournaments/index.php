@@ -6,7 +6,7 @@ ob_start();
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h4 class="card-title">Torneos</h4>
-                <a href="/tournaments/create" class="btn btn-primary">Nuevo torneo</a>
+                <a href="<?= htmlspecialchars($baseUrl) ?>/tournaments/create" class="btn btn-primary">Nuevo torneo</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped">

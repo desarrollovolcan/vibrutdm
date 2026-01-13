@@ -51,7 +51,7 @@ ob_start();
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <form method="post" action="/groups/recalculate">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/groups/recalculate">
                     <input type="hidden" name="group_id" value="<?= htmlspecialchars((string) $groupId) ?>">
                     <button class="btn btn-outline-primary" type="submit">Recalcular standings</button>
                 </form>
