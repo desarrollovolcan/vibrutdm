@@ -23,11 +23,18 @@ class Router
     {
         $path = parse_url($uri, PHP_URL_PATH) ?: '/';
         $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-        if ($scriptName && str_starts_with($path, $scriptName)) {
-            $path = substr($path, strlen($scriptName));
+        $basePath = rtrim(dirname($scriptName), '/');
+        if ($basePath === '/' || $basePath === '.') {
+            $basePath = '';
+        }
+        if ($basePath && str_starts_with($path, $basePath)) {
+            $path = substr($path, strlen($basePath));
             if ($path === '') {
                 $path = '/';
             }
+        }
+        if (str_starts_with($path, '/index.php')) {
+            $path = substr($path, strlen('/index.php')) ?: '/';
         }
         $handler = $this->routes[$method][$path] ?? null;
 

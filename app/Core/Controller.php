@@ -18,7 +18,9 @@ class Controller
             if ($basePath === '/' || $basePath === '.') {
                 $basePath = '';
             }
-            $baseUrl = $basePath . '/index.php';
+            $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+            $indexPrefix = $basePath . '/index.php';
+            $baseUrl = ($requestPath && str_starts_with($requestPath, $indexPrefix)) ? $indexPrefix : $basePath;
             if (str_starts_with($path, '/')) {
                 $target = $baseUrl . $path;
             } else {
