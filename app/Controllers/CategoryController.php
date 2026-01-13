@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\CategoryModel;
+use App\Models\TournamentModel;
 
 class CategoryController extends Controller
 {
@@ -11,6 +12,16 @@ class CategoryController extends Controller
     {
         $tournamentId = (int) ($_GET['tournament_id'] ?? 0);
         $model = new CategoryModel();
+        if ($tournamentId === 0) {
+            $tournamentModel = new TournamentModel();
+            $tournament = $tournamentModel->first();
+
+            if ($tournament) {
+                $this->redirect('/categories?tournament_id=' . $tournament['id']);
+                return;
+            }
+        }
+
         $categories = $tournamentId ? $model->listByTournament($tournamentId) : [];
 
         $this->view('categories/index', [

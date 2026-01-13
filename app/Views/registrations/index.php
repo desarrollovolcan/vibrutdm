@@ -8,7 +8,7 @@ ob_start();
                 <h4 class="card-title">Inscribir jugador</h4>
             </div>
             <div class="card-body">
-                <form method="post" action="/registrations">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/registrations">
                     <input type="hidden" name="category_id" value="<?= htmlspecialchars((string) ($category['id'] ?? 0)) ?>">
                     <div class="mb-3">
                         <label class="form-label">Jugador</label>
@@ -49,7 +49,7 @@ ob_start();
                                 <td><?= htmlspecialchars($registration['first_name'] . ' ' . $registration['last_name']) ?></td>
                                 <td><?= htmlspecialchars((string) $registration['ranking_seed']) ?></td>
                                 <td>
-                                    <form method="post" action="/registrations/delete">
+                                    <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/registrations/delete">
                                         <input type="hidden" name="category_id" value="<?= htmlspecialchars((string) $registration['category_id']) ?>">
                                         <input type="hidden" name="player_id" value="<?= htmlspecialchars((string) $registration['player_id']) ?>">
                                         <button class="btn btn-sm btn-danger" type="submit">Quitar</button>

@@ -8,17 +8,17 @@ $title = 'Acceso al sistema';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($title) ?></title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.avif">
-    <link href="/assets/vendor/metismenu/dist/metisMenu.min.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="/assets/css/plugins.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars($basePath) ?>/assets/images/favicon.avif">
+    <link href="<?= htmlspecialchars($basePath) ?>/assets/vendor/metismenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="<?= htmlspecialchars($basePath) ?>/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="<?= htmlspecialchars($basePath) ?>/assets/css/plugins.css" rel="stylesheet">
+    <link href="<?= htmlspecialchars($basePath) ?>/assets/css/style.css" rel="stylesheet">
 </head>
 <body class="h-100">
     <main class="login-account">
         <div class="row h-100">
             <div class="col-lg-6 align-self-start">
-                <div class="account-info-area" style="background-image: url(/assets/images/rainbow.gif)">
+                <div class="account-info-area" style="background-image: url(<?= htmlspecialchars($basePath) ?>/assets/images/rainbow.gif)">
                     <div class="login-content">
                         <p class="sub-title">Ingresa con tus credenciales de administrador</p>
                         <h1 class="title">Gestión de <span>Torneos</span></h1>
@@ -36,7 +36,7 @@ $title = 'Acceso al sistema';
                     <?php if (!empty($error)) : ?>
                         <div class="alert alert-danger mb-4"><?= htmlspecialchars($error) ?></div>
                     <?php endif; ?>
-                    <form method="post" action="/login">
+                    <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/login">
                         <div class="mb-3">
                             <label class="form-label">Usuario</label>
                             <input type="text" class="form-control form-control-lg" name="email" placeholder="admin" required>
@@ -60,11 +60,11 @@ $title = 'Acceso al sistema';
         </div>
     </main>
 
-    <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-    <script src="/assets/vendor/metismenu/dist/metisMenu.min.js"></script>
-    <script src="/assets/js/deznav-init.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/vendor/metismenu/dist/metisMenu.min.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/js/deznav-init.js"></script>
+    <script src="<?= htmlspecialchars($basePath) ?>/assets/js/custom.js"></script>
 </body>
 </html>
