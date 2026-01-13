@@ -8,7 +8,7 @@ ob_start();
                 <h4 class="card-title">Crear categoría</h4>
             </div>
             <div class="card-body">
-                <form method="post" action="/categories">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/categories">
                     <input type="hidden" name="tournament_id" value="<?= htmlspecialchars((string) $tournamentId) ?>">
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>

@@ -8,7 +8,7 @@ ob_start();
                 <h4 class="card-title">Registrar jugador</h4>
             </div>
             <div class="card-body">
-                <form method="post" action="/players">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/players">
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="first_name" required>

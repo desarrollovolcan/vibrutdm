@@ -24,4 +24,23 @@ class GroupModel extends Model
 
         return $stmt->fetchAll();
     }
+
+    public function first(): ?array
+    {
+        $stmt = $this->db->query('SELECT * FROM groups ORDER BY id LIMIT 1');
+        $group = $stmt->fetch();
+
+        return $group ?: null;
+    }
+
+    public function firstByCategory(int $categoryId): ?array
+    {
+        $stmt = $this->db->prepare(
+            'SELECT * FROM groups WHERE category_id = :category_id ORDER BY group_number LIMIT 1'
+        );
+        $stmt->execute(['category_id' => $categoryId]);
+        $group = $stmt->fetch();
+
+        return $group ?: null;
+    }
 }
