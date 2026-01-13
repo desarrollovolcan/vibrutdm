@@ -11,7 +11,7 @@ ob_start();
                 <?php if (!$match) : ?>
                     <p class="text-muted">Match no encontrado.</p>
                 <?php else : ?>
-                    <form method="post" action="/results/update">
+                    <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/results/update">
                         <input type="hidden" name="match_id" value="<?= htmlspecialchars((string) $match['id']) ?>">
                         <?php for ($i = 1; $i <= (int) $match['best_of_sets']; $i++) : ?>
                             <div class="row mb-3">
