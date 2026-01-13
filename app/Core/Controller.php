@@ -11,7 +11,24 @@ class Controller
 
     protected function redirect(string $path): void
     {
-        header('Location: ' . $path);
+        $target = $path;
+        if (!str_starts_with($path, 'http://') && !str_starts_with($path, 'https://')) {
+            $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
+            $basePath = rtrim(dirname($scriptName), '/');
+            if ($basePath === '/' || $basePath === '.') {
+                $basePath = '';
+            }
+            $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+            $indexPrefix = $basePath . '/index.php';
+            $baseUrl = ($requestPath && str_starts_with($requestPath, $indexPrefix)) ? $indexPrefix : $basePath;
+            if (str_starts_with($path, '/')) {
+                $target = $baseUrl . $path;
+            } else {
+                $target = $baseUrl . '/' . $path;
+            }
+        }
+
+        header('Location: ' . $target);
         exit;
     }
 }
