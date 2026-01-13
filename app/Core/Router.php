@@ -22,6 +22,13 @@ class Router
     public function dispatch(string $method, string $uri): void
     {
         $path = parse_url($uri, PHP_URL_PATH) ?: '/';
+        $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
+        if ($scriptName && str_starts_with($path, $scriptName)) {
+            $path = substr($path, strlen($scriptName));
+            if ($path === '') {
+                $path = '/';
+            }
+        }
         $handler = $this->routes[$method][$path] ?? null;
 
         if ($handler === null) {
