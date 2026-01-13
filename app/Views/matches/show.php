@@ -25,7 +25,7 @@ ob_start();
                                 <td><?= htmlspecialchars((string) $match['player_a_id']) ?></td>
                                 <td><?= htmlspecialchars((string) $match['player_b_id']) ?></td>
                                 <td><?= htmlspecialchars($match['status']) ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="/results/edit?match_id=<?= htmlspecialchars((string) $match['id']) ?>">Cargar sets</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="<?= htmlspecialchars($baseUrl) ?>/results/edit?match_id=<?= htmlspecialchars((string) $match['id']) ?>">Cargar sets</a></td>
                             </tr>
                         <?php endforeach; ?>
                         <?php if (empty($matches)) : ?>

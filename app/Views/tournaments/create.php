@@ -8,7 +8,7 @@ ob_start();
                 <h4 class="card-title">Crear torneo</h4>
             </div>
             <div class="card-body">
-                <form method="post" action="/tournaments">
+                <form method="post" action="<?= htmlspecialchars($baseUrl) ?>/tournaments">
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="name" required>
