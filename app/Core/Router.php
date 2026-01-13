@@ -27,6 +27,19 @@ class Router
         if ($basePath === '/' || $basePath === '.') {
             $basePath = '';
         }
+        if ($basePath === '' && $path !== '') {
+            if (str_contains($path, '/index.php')) {
+                $beforeIndex = strstr($path, '/index.php', true);
+                if ($beforeIndex !== false && $beforeIndex !== '') {
+                    $basePath = $beforeIndex;
+                }
+            } else {
+                $segments = explode('/', trim($path, '/'));
+                if (!empty($segments[0])) {
+                    $basePath = '/' . $segments[0];
+                }
+            }
+        }
         if ($basePath && str_starts_with($path, $basePath)) {
             $path = substr($path, strlen($basePath));
             if ($path === '') {
